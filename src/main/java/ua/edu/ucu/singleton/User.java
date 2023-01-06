@@ -1,7 +1,9 @@
-package singleton;
+package ua.edu.ucu.singleton;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+
+import java.sql.SQLException;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,7 +13,7 @@ public class User {
     private String email;
     private int age;
 
-    public void save() {
+    public void save() throws SQLException {
         DBConnection dbConnection = DBConnection.getInstance();
         String query = String.format("insert into user (email, name, age) values ('%s', '%s', %d);",
                 email, name, age);
