@@ -13,7 +13,7 @@ public class User {
     private String email;
     private int age;
 
-    public void save() throws SQLException {
+    public void save() {
         DBConnection dbConnection = DBConnection.getInstance();
         String query = String.format("insert into user (email, name, age) values ('%s', '%s', %d);",
                 email, name, age);
